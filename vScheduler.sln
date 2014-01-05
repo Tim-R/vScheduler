@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vController", "vMixControler\vController.csproj", "{660ED897-E2E5-4BD7-A902-B1376F367472}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vController", "vController\vController.csproj", "{660ED897-E2E5-4BD7-A902-B1376F367472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vManager", "vMixManager\vManager.csproj", "{3A26A912-9635-4A71-83CF-5A3CAF3B19C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vManager", "vManager\vManager.csproj", "{3A26A912-9635-4A71-83CF-5A3CAF3B19C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

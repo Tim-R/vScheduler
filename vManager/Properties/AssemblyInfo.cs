@@ -2,15 +2,15 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("vMixControler")]
+[assembly: AssemblyTitle("vManager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("vMixControler")]
+[assembly: AssemblyProduct("vManager")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("35790407-a5de-4d5a-8280-1f6ac55b6cd4")]
+[assembly: Guid("3708bbc0-d1a0-4299-8903-f23d213a2ba7")]
 [assembly: AssemblyVersion("0.6.0.0")]
 [assembly: AssemblyFileVersion("0.6.0.0")]
