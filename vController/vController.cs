@@ -248,14 +248,22 @@ namespace vMixControler
 
         private void RemoveEvent(vMixEvent evnt)
         {
-            if (this.InvokeRequired)
-                this.Invoke(new MethodInvoker(delegate { RemoveEvent(evnt); }));
-            else
+            
+            try
             {
-                EventListLock.WaitOne();
-                EventList.Remove(evnt);
-                EventListLock.Release();
-                lvEventList.VirtualListSize = EventList.Count;
+                if (this.InvokeRequired)
+                    this.Invoke(new MethodInvoker(delegate { RemoveEvent(evnt); }));
+                else
+                {
+                    EventListLock.WaitOne();
+                    EventList.Remove(evnt);
+                    EventListLock.Release();
+                    lvEventList.VirtualListSize = EventList.Count;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.StackTrace);                
             }
         }
 
