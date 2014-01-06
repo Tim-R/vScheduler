@@ -26,11 +26,14 @@ namespace vMixControler
         {
             vMixInputs.Clear();
             XmlDocument doc = new XmlDocument();
+
             try
             {
                 doc.LoadXml(vMix.DownloadString("api"));
 
-                if (!CheckVersion())
+                string[] v = doc.SelectNodes("vmix/version")[0].InnerText.Split('.');
+
+                if (int.Parse(v[0]) < 11)
                     return false;
 
                 foreach (XmlNode node in doc.SelectNodes("vmix/inputs/input"))
@@ -49,21 +52,7 @@ namespace vMixControler
                 }
                 return true;
             }
-            catch { }
-            return false;
-        }
-
-        public bool CheckVersion()
-        {
-            XmlDocument doc = new XmlDocument();
-            try
-            {
-                doc.LoadXml(vMix.DownloadString("api"));
-                string[] v = doc.SelectNodes("vmix/version")[0].InnerText.Split('.');
-                if (int.Parse(v[0]) >= 11)
-                    return true;
-            }
-            catch { }
+            catch {}
             return false;
         }
 
@@ -75,11 +64,14 @@ namespace vMixControler
                 return false;
 
             foreach (vMixInput vmi in vMixInputs)
+            {
                 if (vmi.name == inputname)
                 {
                     guid = vmi.guid;
                     break;
                 }
+            }
+
             return true;
         }
 
@@ -87,11 +79,13 @@ namespace vMixControler
         {
             try
             {
-                vMix.DownloadString("api?function=AddInput&Input=" + guid + "&Value=" + type + "|" + HttpUtility.UrlEncode(path));
-                return true;
+                vMix.DownloadString("api?function=AddInput&Input=" + guid + "&Value=" + type + "|" + HttpUtility.UrlEncode(path));                
             }
-            catch { }
-            return false;
+            catch
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool SetupSlideshow(int intervall, string transitioneffect, int transitiontime, string guid)
@@ -101,10 +95,12 @@ namespace vMixControler
                 vMix.DownloadString("api?function=SetPictureTransition&Input=" + guid + "&Value=" + intervall.ToString());
                 vMix.DownloadString("api?function=SetPictureEffect&Input=" + guid + "&Value=" + transitioneffect);
                 vMix.DownloadString("api?function=SetPictureEffectDuration&Input=" + guid + "&Value=" + transitiontime.ToString());
-                return true;
             }
-            catch { }
-            return false;
+            catch 
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool ForwardTo(string guid, int position)
@@ -112,7 +108,6 @@ namespace vMixControler
             try
             {
                 vMix.DownloadString("api?function=SetPosition&Value=" + position.ToString() + "&Input=" + guid);
-                //vMix.DownloadString("api?function=PlayPause&Input=" + guid);
             }
             catch
             {

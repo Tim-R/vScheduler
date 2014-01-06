@@ -41,11 +41,13 @@ namespace vMixManager
         
         public ListViewItem EventListItem(vMixEvent vmixevent)
         {
-            string[] caption = { vmixevent.Title,
+            string[] caption = { 
+                                   vmixevent.Title,
                                    vmixevent.EventStart.ToString("MM-dd  HH:mm:ss"),
                                    vmixevent.EventDuration.ToString(@"hh\:mm\:ss"),
                                    vmixevent.EventTypeString(),
-                                   vmixevent.EventPath };
+                                   vmixevent.EventPath 
+                               };
             ListViewItem lvi = new ListViewItem(caption);
             lvi.ToolTipText = vmixevent.EventInfoText;
             return lvi;
@@ -55,6 +57,7 @@ namespace vMixManager
         {
             if (donotredraw)
                 return;
+
             donotredraw = true;
             if (ActiveEvent != null)
             {
@@ -944,9 +947,5 @@ namespace vMixManager
                 FixInPointAndDuration();
             }
         }
-
-
-
-
     }
 }

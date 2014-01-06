@@ -81,11 +81,6 @@ namespace vMixControler
             _vMixLinger = (int)ud_linger.Value;
         }
 
-        private void vMixPreferences_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void vMixPreferences_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();

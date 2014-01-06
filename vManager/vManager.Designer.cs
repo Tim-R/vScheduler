@@ -225,7 +225,7 @@
             this.bn_now.Name = "bn_now";
             this.bn_now.Size = new System.Drawing.Size(39, 23);
             this.bn_now.TabIndex = 26;
-            this.bn_now.Text = "now";
+            this.bn_now.Text = "Now";
             this.bn_now.UseVisualStyleBackColor = true;
             this.bn_now.Click += new System.EventHandler(this.bn_now_Click);
             // 
@@ -302,7 +302,7 @@
             this.bn_add_photos.Name = "bn_add_photos";
             this.bn_add_photos.Size = new System.Drawing.Size(74, 23);
             this.bn_add_photos.TabIndex = 18;
-            this.bn_add_photos.Text = "Photos";
+            this.bn_add_photos.Text = "Photo";
             this.bn_add_photos.UseVisualStyleBackColor = true;
             this.bn_add_photos.Click += new System.EventHandler(this.bn_add_photos_Click);
             // 
@@ -997,7 +997,7 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.EventList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EventList.Dock = System.Windows.Forms.DockStyle.Left;
             this.EventList.FullRowSelect = true;
             this.EventList.GridLines = true;
             this.EventList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;

@@ -2,15 +2,8 @@
 {
     partial class vMixPreferences
     {
-        /// <summary>
-        /// Erforderliche Designervariable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Verwendete Ressourcen bereinigen.
-        /// </summary>
-        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Vom Windows Form-Designer generierter Code
 
-        /// <summary>
-        /// Erforderliche Methode für die Designerunterstützung.
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
-        /// </summary>
         private void InitializeComponent()
         {
             this.ud_vMixPort = new System.Windows.Forms.NumericUpDown();
@@ -221,7 +210,6 @@
             this.Text = "Settings";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.vMixPreferences_FormClosing);
-            this.Load += new System.EventHandler(this.vMixPreferences_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ud_vMixPort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ud_preload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ud_linger)).EndInit();
